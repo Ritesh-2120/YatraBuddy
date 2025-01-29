@@ -1,0 +1,14 @@
+<% layout("/layouts/boilerplate.ejs") %>
+<body>
+  <header>
+    <h1 class="mt-3 mb-3">Your Travel Itinerary</h1>
+  </header>
+  <div id="parsed-itinerary"></div>
+
+  <!-- Pass the itinerary text as a global variable -->
+  <script>
+    window.itineraryText = `<%= itineraryText.replace(/"/g, '&quot;') %>`;
+  </script>
+
+  <script src="/js/itinerary.js"></script>
+</body>

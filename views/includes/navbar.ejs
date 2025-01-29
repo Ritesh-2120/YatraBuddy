@@ -1,0 +1,51 @@
+<!-- Bootstrap --> 
+<!-- custom style in basicStyle.css file -->
+
+<nav class="navbar navbar-expand-md bg-body-light border-bottom custom-navbar sticky-top">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
+            aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Logo as Navbar Brand -->
+        <a class="navbar-brand" href="/">
+            <img src="/images/logo.png" alt="Logo" style="height: 80px; width: auto;" />
+        </a>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/listing">Listings</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/itinerary-form">Itinerary</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/listing/new">Add Item</a>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <% if(!currUser){ %>
+                <li class="nav-item">
+                    <a class="nav-link" href="/signup"><b>Signup</b></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/login"><b>Login</b></a>
+                </li>
+                <% } %>
+                <% if(currUser){ %>
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout"><b>Logout</b></a>
+                </li>
+                <% } %>
+            </ul>
+            <!-- <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form> -->
+        </div>
+    </div>
+</nav>

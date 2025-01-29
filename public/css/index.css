@@ -1,0 +1,46 @@
+body {
+    margin: 0;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.content {
+    padding: 50px 20px;
+}
+
+.content h1 {
+    font-size: 2.5em;
+    margin: 0;
+    color: #FF6D61;
+}
+
+.content h1 span {
+    color: black;
+    font-weight: bold;
+}
+
+.content p {
+    margin: 20px 0;
+    color: #555;
+    font-size: 1.2em;
+}
+
+.content button {
+    padding: 15px 30px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.content button:hover {
+    /* opacity: 0.9; */
+    font-size: 1em;
+    color: white;
+    background-color: #FF6D61;
+}
+.mybtn{
+    width: 180px;
+}

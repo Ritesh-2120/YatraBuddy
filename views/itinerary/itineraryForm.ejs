@@ -1,0 +1,19 @@
+<% layout("/layouts/boilerplate.ejs") %>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/css/itineraryForm.css">
+</head>
+<body>
+  <header>
+    <h2>Generate Your Travel Itinerary</h2>
+  </header>
+
+  <form id="itinerary-form" action="/generate-itinerary" method="POST">
+    <input type="text" name="destination" id="destination" placeholder="Enter destination" required>
+    <input type="text" name="dates" id="dates" placeholder="Enter dates (e.g., 2023-05-01 to 2023-05-07)" required>
+    <input type="text" name="interests" id="interests" placeholder="Enter interests (e.g., art, history)">
+    <input type="text" name="budget" id="budget" placeholder="Enter budget (e.g., moderate)">
+    <button type="submit">Generate Itinerary</button>
+  </form>
+</body>
+</html>
