@@ -337,3 +337,18 @@ em-emoji-picker {
 body.show-emoji-picker em-emoji-picker{
   visibility: visible;
 }
+
+@media (max-width: 500px) {
+  .chatbot-popup {
+    top: 100px;
+    right: 5%;
+    bottom: 5%;
+    width: 90%;
+    height: 80vh;
+    z-index: 999;
+  }
+
+  .chat-body {
+    height: calc(80vh - 160px); 
+  }
+}

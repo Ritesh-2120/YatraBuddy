@@ -19,3 +19,21 @@
   transition: all 0.3s ease;
   
 }
+.chat-body {
+  height: calc(80vh - 140px); 
+}
+
+@media (max-width: 500px) {
+  .chatbot-popup {
+    top: 100px;
+    /* right: 5%; */
+    left: 5vw;
+    /* bottom: 5%; */
+    width: 90vw;
+    height: 78vh;
+  }
+
+  .chat-body {
+    height: calc(80vh - 160px); 
+  }
+}
