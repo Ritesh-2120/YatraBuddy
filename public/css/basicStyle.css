@@ -92,3 +92,9 @@ body{
 .review-card{
     border: 2px solid grey !important;
 }
+
+.searching{
+        display: flex;
+        align-items: center; /* Aligns items vertically */
+        justify-content: space-between; /* Adjusts spacing */
+}

@@ -91,8 +91,8 @@ app.use((req,res,next) => {
 app.get("/", (req, res) => {
     res.render('index.ejs');  
 });
-app.get("/slider", (req, res) => {
-    res.render('slider.ejs', { showFooter: false });
+app.get("/chatbot", (req, res) => {
+    res.render('chatbot.ejs', { showFooter: false });
 });
 // Route to display the itinerary form
 app.use('/', itineraryRouter );
@@ -118,3 +118,4 @@ app.use((err,req,res,next) =>{
 app.listen(port, () => {
     console.log(`App is running on port: ${port}`);
 });
+
