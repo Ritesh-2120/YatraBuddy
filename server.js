@@ -20,6 +20,7 @@ const listingRouter = require("./routes/listing.js");
 const reviewRouter = require("./routes/review.js");
 const userRouter = require("./routes/user.js");
 const itineraryRouter = require("./routes/itinerary.js");
+const optimizeRouter = require("./routes/optimize.js");
 const User = require("./Models/user.js");
 
 app.set("view engine", "ejs");  
@@ -101,6 +102,8 @@ app.use("/listing",listingRouter);
 //Review routes
 app.use("/listing/:id/reviews",reviewRouter);
 app.use("/",userRouter);
+//Optimization routes
+app.use("/optimize", optimizeRouter);
 
 
 

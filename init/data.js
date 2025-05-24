@@ -47,19 +47,19 @@ const allListings = [
     videos: [
       {
         id: "7-WlErr5mnQ",
-        title: "Taj Mahal Tour",
+        title: "Varanasi Ghats",
         thumbnail:
           "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148997478.jpg",
       },
       {
         id: "L-2MUmGTkDA",
-        title: "Taj Mahal History",
+        title: "Varanasi Ghats",
         thumbnail:
           "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148914343.jpg",
       },
       {
         id: "_rQtI71dl6I&t=35s",
-        title: "Taj Mahal Architecture",
+        title: "Varanasi Ghats",
         thumbnail:
           "https://img.freepik.com/free-vector/flat-geometric-travel-youtube-thumbnail_23-2148923758.jpg",
       },
@@ -79,20 +79,20 @@ const allListings = [
     coordinates: { latitude: 26.8687, longitude: 80.9121 },
     videos: [
       {
-        id: "sRzNiq8eLfo&t=20s",
-        title: "Taj Mahal Tour",
+        id: "sRzNiq8eLfo&t",
+        title: "Lucknow Bara Imambara",
         thumbnail:
           "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148997478.jpg",
       },
       {
-        id: "HnazxRFfouU&t=9s",
-        title: "Taj Mahal History",
+        id: "HnazxRFfouU&t",
+        title: "Lucknow Bara Imambara",
         thumbnail:
           "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148914343.jpg",
       },
       {
         id: "kKO5R0LWDE4",
-        title: "Taj Mahal Architecture",
+        title: "Lucknow Bara Imambara",
         thumbnail:
           "https://img.freepik.com/free-vector/flat-geometric-travel-youtube-thumbnail_23-2148923758.jpg",
       },
