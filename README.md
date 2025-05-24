@@ -12,12 +12,15 @@ YatraBuddy is a virtual travel guide platform designed to enhance tourism experi
 - **Interactive Maps**: Utilizes OpenStreetMap for dynamic location visualization, helping users navigate destinations effortlessly.
 - **Generate Itinerary**: Automatically creates travel itineraries using the Gemini API (under development).
 - **Responsive Design**: Ensures a seamless user experience on mobile, tablet, and desktop devices.
+- **Chatbot**
+- **Search Items from Listed Elemments**
 
 ## Technology Stack
 - **Frontend**: HTML, CSS, JavaScript, Bootstrap
 - **Backend**: Node.js, Express.js
 - **Database**: MongoDB
 - **Maps Integration**: OpenStreetMap
+- **Generate Itinerary & Chatbot Integration**: with Gemini API
 
 ## Project Structure
 ```plaintext
@@ -61,7 +64,7 @@ The following are the major dependencies used in the project:
 
 ## Acknowledgements
 - OpenStreetMap for map integration.
-- Gemini API for itinerary generation.
+- Gemini API for itinerary generation and Chatbot.
 - Bootstrap for responsive design.
 ---
 
