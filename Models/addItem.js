@@ -15,6 +15,12 @@ const addingSchema = new Schema({
     price: Number,
     location: String,
     country: String,
+    coordinates: { latitude: Number, longitude: Number, },
+    videos: [{
+        id: String,
+        title: String,
+        thumbnail: String
+    }],
     reviews: [
         {
             type: Schema.Types.ObjectId,

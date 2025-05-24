@@ -1,163 +1,416 @@
 <% layout("/layouts/boilerplate.ejs") %>
 
 <body>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-sm-10 offset-md-3 offset-sm-1">
-        <h3 class="heading text-center text-md-start">
-          <%= list.title %>
-        </h3>
-
-        <div class="card">
-          <img src="<%= list.image.url %>" class="card-img-top img-fluid" alt="card-img">
-          <div class="card-body">
-            <p class="card-text text-center">
-              Blog by <i><%= list.owner.username %></i>
-            </p>
-            <p>
-              <%= list.description %>
-            </p>
-            <p class="fw-bold">
-              &#8377; <%= list.price.toLocaleString("en-IN") %>
-            </p>
-            <p>
-              <%= list.location %>
-              <br>
-              <%= list.country %>
-            </p>
+  <link rel="stylesheet" href="/css/show.css">
+  <link rel="stylesheet" href="/css/rating.css">
+  
+  <div class="page-grid">
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+      <div class="nav-links p-3">
+        <div class="d-flex flex-column gap-3">
+          <div class="nav-header mb-4">
+            <h5 class="text-center mb-3">Quick Links</h5>
+            <div class="nav-divider"></div>
           </div>
+          <a href="#details" class="nav-link">
+            <i class="bi bi-info-circle me-2"></i>
+            Details
+          </a>
+          <a href="#videos" class="nav-link">
+            <i class="bi bi-camera-video me-2"></i>
+            Videos
+          </a>
+          <a href="#nearby" class="nav-link">
+            <i class="bi bi-compass me-2"></i>
+            Nearby Places
+          </a>
+          <a href="#reviews" class="nav-link">
+            <i class="bi bi-star me-2"></i>
+            Reviews
+          </a>
+          <a href="#map" class="nav-link">
+            <i class="bi bi-geo-alt me-2"></i>
+            Map
+          </a>
+        
         </div>
-
-        <% if(currUser && currUser._id.equals(list.owner._id)){ %>
-          <div class="d-flex justify-content-center justify-content-md-start mt-3">
-            <a href="/listing/<%= list._id %>/edit" class="btn btn-dark me-2">Edit Details</a>
-            <form method="post" action="/listing/<%= list._id %>?_method=DELETE">
-              <button class="btn btn-dark">Delete Item</button>
-            </form>
-          </div>
-        <% } %>
       </div>
+    </nav>
 
-      <!-- Reviews Section -->
-      <div class="col-lg-8 col-md-10 offset-lg-2 offset-md-1 mt-4">
-        <% if(currUser){ %>
-          <hr>
-          <h4 class="text-center text-md-start">Leave a Review</h4>
-          <form action="/listing/<%= list._id %>/Reviews" method="POST" novalidate class="needs-validation">
-            <div>
-              <label for="rating" class="form-label">Rating :</label>
-              <fieldset class="starability-slot">
-                <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]" value="1" checked aria-label="No rating." />
-                <input type="radio" id="second-rate1" name="review[rating]" value="1" />
-                <label for="second-rate1" title="Terrible">1 star</label>
-                <input type="radio" id="second-rate2" name="review[rating]" value="2" />
-                <label for="second-rate2" title="Not good">2 stars</label>
-                <input type="radio" id="second-rate3" name="review[rating]" value="3" />
-                <label for="second-rate3" title="Average">3 stars</label>
-                <input type="radio" id="second-rate4" name="review[rating]" value="4" />
-                <label for="second-rate4" title="Very good">4 stars</label>
-                <input type="radio" id="second-rate5" name="review[rating]" value="5" />
-                <label for="second-rate5" title="Amazing">5 stars</label>
-              </fieldset>
-            </div>
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="content-wrapper">
+        <!-- Details Section -->
+        <section id="details">
+          <h3 class="heading text-center text-md-start mb-4">
+            <%= list.title %>
+          </h3>
 
-            <div class="mb-3">
-              <label for="comment" class="form-label">Comments :</label>
-              <textarea class="form-control" name="review[comment]" id="comment" cols="30" rows="5" required></textarea>
-              <div class="invalid-feedback">Please add some comment for reviews </div>
-            </div>
-            <button class="btn btn-outline-dark">Submit</button>
-          </form>
-        <% } %>
-
-        <hr>
-        <% if(list.reviews.length > 0){ %>
-          <h4 class="text-center text-md-start">All Reviews</h4>
-          <div class="row g-3">
-            <% for(review of list.reviews){ %>
-              <div class="col-sm-12 col-md-6">
-                <div class="card review-card">
-                  <div class="card-body m-2">
-                    <h5 class="card-title">@<%= review.author.username %></h5>
-                    <p class="starability-result card-text" data-rating="<%= review.rating %>"></p>
-                    <p class="card-text"><%= review.comment %></p>
-                  </div>
-                  <% if(currUser && currUser._id.equals(review.author._id)){ %>
-                    <form method="POST" action="/listing/<%= list._id %>/reviews/<%= review._id %>?_method=DELETE">
-                      <button class="btn btn-sm btn-dark m-2">Delete</button>
-                    </form>
-                  <% } %>
+          <div class="modern-card">
+            <div class="card-image-container">
+              <img src="<%= list.image.url %>" class="card-image" alt="card-img">
+              <div class="image-overlay">
+                <div class="price-tag">
+                  <span class="currency">₹</span>
+                  <span class="amount"><%= list.price.toLocaleString("en-IN") %></span>
                 </div>
               </div>
-            <% } %>
-          </div>
-        <% } %>
-      </div>
-
-      <!-- Map Section -->
-      <div class="col-lg-8 col-md-10 offset-lg-2 offset-md-1 mt-4">
-        <h3 class="text-center text-md-start">Where you'll be</h3>
-        <div id="map" class="mb-3 mt-3" style="height: 400px; width: 100%;"></div>
-      </div>
-
-
-      <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-      <script>
-        const address = "<%= list.location %>, <%= list.country %>";
-        const map_token = "<%= apiKey %>";
-      </script>
-      <script src="/js/map.js"></script>  
-    </div>
-
-    <div>
-    <!-- chatbot section  -->
-    <button id="chatbot-toggler">
-      <span class="material-symbols-rounded">mode_comment</span>
-      <span class="material-symbols-rounded">close</span> 
-    </button>
-  
-    <div class="chatbot-popup">
-      <!-- Chatbot Header -->
-      <div class="chat-header">
-        <div class="header-info">
-          <svg class="chatbot-logo" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 1024 1024">
-            <path d="M738.3 287.6H285.7c-59 0-106.8 47.8-106.8 106.8v303.1c0 59 47.8 106.8 106.8 106.8h81.5v111.1c0 .7.8 1.1 1.4.7l166.9-110.6 41.8-.8h117.4l43.6-.4c59 0 106.8-47.8 106.8-106.8V394.5c0-59-47.8-106.9-106.8-106.9zM351.7 448.2c0-29.5 23.9-53.5 53.5-53.5s53.5 23.9 53.5 53.5-23.9 53.5-53.5 53.5-53.5-23.9-53.5-53.5zm157.9 267.1c-67.8 0-123.8-47.5-132.3-109h264.6c-8.6 61.5-64.5 109-132.3 109zm110-213.7c-29.5 0-53.5-23.9-53.5-53.5s23.9-53.5 53.5-53.5 53.5 23.9 53.5 53.5-23.9 53.5-53.5 53.5zM867.2 644.5V453.1h26.5c19.4 0 35.1 15.7 35.1 35.1v121.1c0 19.4-15.7 35.1-35.1 35.1h-26.5zM95.2 609.4V488.2c0-19.4 15.7-35.1 35.1-35.1h26.5v191.3h-26.5c-19.4 0-35.1-15.7-35.1-35.1zM561.5 149.6c0 23.4-15.6 43.3-36.9 49.7v44.9h-30v-44.9c-21.4-6.5-36.9-26.3-36.9-49.7 0-28.6 23.3-51.9 51.9-51.9s51.9 23.3 51.9 51.9z"></path>
-          </svg>
-          <h2 class="logo-text">Chatbot</h2>
-        </div>
-        <button id="close-chatbot" class="material-symbols-rounded">keyboard_arrow_down</button>
-      </div>
-  
-      <!-- Chatbot Body -->
-      <div class="chat-body">
-        <div class="message bot-message">
-          <svg class="bot-avatar" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 1024 1024">
-            <path d="M738.3 287.6H285.7c-59 0-106.8 47.8-106.8 106.8v303.1c0 59 47.8 106.8 106.8 106.8h81.5v111.1c0 .7.8 1.1 1.4.7l166.9-110.6 41.8-.8h117.4l43.6-.4c59 0 106.8-47.8 106.8-106.8V394.5c0-59-47.8-106.9-106.8-106.9zM351.7 448.2c0-29.5 23.9-53.5 53.5-53.5s53.5 23.9 53.5 53.5-23.9 53.5-53.5 53.5-53.5-23.9-53.5-53.5zm157.9 267.1c-67.8 0-123.8-47.5-132.3-109h264.6c-8.6 61.5-64.5 109-132.3 109zm110-213.7c-29.5 0-53.5-23.9-53.5-53.5s23.9-53.5 53.5-53.5 53.5 23.9 53.5 53.5-23.9 53.5-53.5 53.5zM867.2 644.5V453.1h26.5c19.4 0 35.1 15.7 35.1 35.1v121.1c0 19.4-15.7 35.1-35.1 35.1h-26.5zM95.2 609.4V488.2c0-19.4 15.7-35.1 35.1-35.1h26.5v191.3h-26.5c-19.4 0-35.1-15.7-35.1-35.1zM561.5 149.6c0 23.4-15.6 43.3-36.9 49.7v44.9h-30v-44.9c-21.4-6.5-36.9-26.3-36.9-49.7 0-28.6 23.3-51.9 51.9-51.9s51.9 23.3 51.9 51.9z"></path>
-          </svg>
-          <div class="message-text">Hey there 👋 <br> How can I help you today?</div>
-        </div>
-      </div>
-  
-        <!-- Chatbot Footer -->
-         <div class="chat-footer">
-          <form action="#" class="chat-form">
-            <textarea placeholder="Message..." class="message-input" required></textarea>
-            <div class="chat-controls">
-              <button type="button" id="emoji-picker" class="material-symbols-rounded">sentiment_satisfied</button>
-              <div class="file-upload-wrapper">
-                <input type="file" accept="images/*" id="file-input" hidden>
-                <img src="#">
-                <button type="button" id="file-upload" class="material-symbols-rounded">attach_file</button>
-                <button type="button" id="file-cancle" class="material-symbols-rounded">close</button>
-              </div>
-              <button type="submit" id="send-message" class="material-symbols-rounded">arrow_upward</button>
             </div>
-  
-          </form>
-         </div>
-    </div>
-  
+            
+            <div class="card-content" id="details">
+              <div class="author-info">
+                <div class="author-avatar">
+                  <i class="bi bi-person-circle"></i>
+                </div>
+                <div class="author-details">
+                  <span class="by-text">Posted by</span>
+                  <span class="author-name"><%= list.owner.username %></span>
+                </div>
+              </div>
 
+              <div class="description-section">
+                <p class="description">
+                  <%= list.description %>
+                </p>
+              </div>
+
+              <div class="location-section">
+                <div class="location-icon">
+                  <i class="bi bi-geo-alt-fill"></i>
+                </div>
+                <div class="location-details">
+                  <span class="location"><%= list.location %></span>
+                  <span class="country"><%= list.country %></span>
+                  <!-- <span class="coordinates"><%= list.coordinates.latitude %></span>
+                  <span class="coordinates"><%= list.coordinates.longitude %></span> -->
+                </div>
+              </div>
+
+              <% if(currUser && currUser._id.equals(list.owner._id)){ %>
+                <div class="action-buttons">
+                  <a href="/listing/<%= list._id %>/edit" class="action-btn edit-btn">
+                    <i class="bi bi-pencil-square me-2"></i>
+                    Edit Details
+                  </a>
+                  <form method="post" action="/listing/<%= list._id %>?_method=DELETE" class="d-inline">
+                    <button class="action-btn delete-btn">
+                      <i class="bi bi-trash me-2"></i>
+                      Delete Item
+                    </button>
+                  </form>
+                </div>
+              <% } %>
+            </div>
+          </div>
+        </section>
+        
+
+        <!-- Videos Section -->
+        <section id="videos" class="section-container">
+          <div class="section-header">
+            <h4 class="section-title">Video Gallery</h4>
+            <div class="section-divider"></div>
+          </div>
+
+          <div class="video-gallery">
+            <div class="row g-3">
+              <% if(list.videos && list.videos.length > 0) { %>
+                <% list.videos.forEach(function(video) { %>
+                  <div class="col-md-4">
+                    <div class="video-thumbnail" data-bs-toggle="modal" data-bs-target="#youtubeModal" data-video-id="<%= video.id %>">
+                      <img src="<%= video.thumbnail %>" class="img-fluid rounded" alt="<%= video.title %>">
+                      <div class="play-overlay">
+                        <i class="bi bi-play-circle-fill"></i>
+                      </div>
+                    </div>
+                  </div>
+                <% }); %>
+              <% } else { %>
+                <div class="col-12">
+                  <p class="text-center">No videos available for this listing.</p>
+                </div>
+              <% } %>
+            </div>
+          </div>
+        </section>
+
+        <!-- Nearby Places Section -->
+        <section id="nearby" class="section-container">
+          <div class="section-header">
+            <h4 class="section-title">Nearby Places</h4>
+            <div class="section-divider"></div>
+          </div>
+          <div class="nearby-places-container">
+            <div class="row g-3" id="nearbyPlaces">
+              <!-- Nearby places will be populated by JavaScript -->
+            </div>
+          </div>
+        </section>
+
+        <!-- Reviews Section -->
+        <section id="reviews" class="section-container">
+          <div class="section-header">
+            <h4 class="section-title">Reviews</h4>
+            <div class="section-divider"></div>
+          </div>
+
+          <% if(currUser){ %>
+            <div class="review-form-container">
+              <h5 class="form-title">Leave a Review</h5>
+              <form action="/listing/<%= list._id %>/Reviews" method="POST" novalidate class="review-form">
+                <div class="rating-section">
+                  <label class="rating-label">Rating:</label>
+                  <fieldset class="starability-slot">
+                    <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]" value="1" checked aria-label="No rating." />
+                    <input type="radio" id="second-rate1" name="review[rating]" value="1" />
+                    <label for="second-rate1" title="Terrible">1 star</label>
+                    <input type="radio" id="second-rate2" name="review[rating]" value="2" />
+                    <label for="second-rate2" title="Not good">2 stars</label>
+                    <input type="radio" id="second-rate3" name="review[rating]" value="3" />
+                    <label for="second-rate3" title="Average">3 stars</label>
+                    <input type="radio" id="second-rate4" name="review[rating]" value="4" />
+                    <label for="second-rate4" title="Very good">4 stars</label>
+                    <input type="radio" id="second-rate5" name="review[rating]" value="5" />
+                    <label for="second-rate5" title="Amazing">5 stars</label>
+                  </fieldset>
+                </div>
+
+                <div class="comment-section">
+                  <label for="comment" class="comment-label">Comments:</label>
+                  <textarea class="form-control" name="review[comment]" id="comment" rows="5" required></textarea>
+                  <div class="invalid-feedback">Please add some comment for reviews</div>
+                </div>
+                <button class="submit-btn">Submit Review</button>
+              </form>
+            </div>
+          <% } %>
+
+          <% if(list.reviews.length > 0){ %>
+            <div class="reviews-container">
+              <div class="row g-3">
+                <% for(review of list.reviews){ %>
+                  <div class="col-md-6">
+                    <div class="review-card">
+                      <div class="review-header">
+                        <div class="reviewer-avatar">
+                          <i class="bi bi-person-circle"></i>
+                        </div>
+                        <div class="reviewer-info">
+                          <span class="reviewer-name">@<%= review.author.username %></span>
+                          <div class="review-rating" data-rating="<%= review.rating %>"></div>
+                        </div>
+                      </div>
+                      <div class="review-content">
+                        <p class="review-text"><%= review.comment %></p>
+                      </div>
+                      <% if(currUser && currUser._id.equals(review.author._id)){ %>
+                        <div class="review-actions">
+                          <form method="POST" action="/listing/<%= list._id %>/reviews/<%= review._id %>?_method=DELETE">
+                            <button class="delete-review-btn">
+                              <i class="bi bi-trash"></i>
+                              Delete
+                            </button>
+                          </form>
+                        </div>
+                      <% } %>
+                    </div>
+                  </div>
+                <% } %>
+              </div>
+            </div>
+          <% } %>
+        </section>
+
+        <!-- Map Section -->
+        <div class="col-lg-8 col-md-10 offset-lg-2 offset-md-1 mt-4">
+          <h3 class="text-center text-md-start">Where you'll be</h3>
+          <div id="map" class="mb-3 mt-3" style="height: 400px; width: 100%;"></div>
+        </div>
+
+      </div>
+    </main>
   </div>
+
+  <!-- YouTube Modal -->
+  <div class="modal fade" id="youtubeModal" tabindex="-1" aria-labelledby="youtubeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header bg-dark text-white">
+          <h5 class="modal-title" id="youtubeModalLabel">Video Preview</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-0">
+          <div class="video-container">
+            <iframe id="youtubePlayer" width="100%" height="100%" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+
+  <div>
+  <!-- chatbot section  -->
+  <button id="chatbot-toggler">
+    <span class="material-symbols-rounded">mode_comment</span>
+    <span class="material-symbols-rounded">close</span> 
+  </button>
+
+  <div class="chatbot-popup">
+    <!-- Chatbot Header -->
+    <div class="chat-header">
+      <div class="header-info">
+        <svg class="chatbot-logo" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 1024 1024">
+          <path d="M738.3 287.6H285.7c-59 0-106.8 47.8-106.8 106.8v303.1c0 59 47.8 106.8 106.8 106.8h81.5v111.1c0 .7.8 1.1 1.4.7l166.9-110.6 41.8-.8h117.4l43.6-.4c59 0 106.8-47.8 106.8-106.8V394.5c0-59-47.8-106.9-106.8-106.9zM351.7 448.2c0-29.5 23.9-53.5 53.5-53.5s53.5 23.9 53.5 53.5-23.9 53.5-53.5 53.5-53.5-23.9-53.5-53.5zm157.9 267.1c-67.8 0-123.8-47.5-132.3-109h264.6c-8.6 61.5-64.5 109-132.3 109zm110-213.7c-29.5 0-53.5-23.9-53.5-53.5s23.9-53.5 53.5-53.5 53.5 23.9 53.5 53.5-23.9 53.5-53.5 53.5zM867.2 644.5V453.1h26.5c19.4 0 35.1 15.7 35.1 35.1v121.1c0 19.4-15.7 35.1-35.1 35.1h-26.5zM95.2 609.4V488.2c0-19.4 15.7-35.1 35.1-35.1h26.5v191.3h-26.5c-19.4 0-35.1-15.7-35.1-35.1zM561.5 149.6c0 23.4-15.6 43.3-36.9 49.7v44.9h-30v-44.9c-21.4-6.5-36.9-26.3-36.9-49.7 0-28.6 23.3-51.9 51.9-51.9s51.9 23.3 51.9 51.9z"></path>
+        </svg>
+        <h2 class="logo-text">Chatbot</h2>
+      </div>
+      <button id="close-chatbot" class="material-symbols-rounded">keyboard_arrow_down</button>
+    </div>
+
+    <!-- Chatbot Body -->
+    <div class="chat-body">
+      <div class="message bot-message">
+        <svg class="bot-avatar" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 1024 1024">
+          <path d="M738.3 287.6H285.7c-59 0-106.8 47.8-106.8 106.8v303.1c0 59 47.8 106.8 106.8 106.8h81.5v111.1c0 .7.8 1.1 1.4.7l166.9-110.6 41.8-.8h117.4l43.6-.4c59 0 106.8-47.8 106.8-106.8V394.5c0-59-47.8-106.9-106.8-106.9zM351.7 448.2c0-29.5 23.9-53.5 53.5-53.5s53.5 23.9 53.5 53.5-23.9 53.5-53.5 53.5-53.5-23.9-53.5-53.5zm157.9 267.1c-67.8 0-123.8-47.5-132.3-109h264.6c-8.6 61.5-64.5 109-132.3 109zm110-213.7c-29.5 0-53.5-23.9-53.5-53.5s23.9-53.5 53.5-53.5 53.5 23.9 53.5 53.5-23.9 53.5-53.5 53.5zM867.2 644.5V453.1h26.5c19.4 0 35.1 15.7 35.1 35.1v121.1c0 19.4-15.7 35.1-35.1 35.1h-26.5zM95.2 609.4V488.2c0-19.4 15.7-35.1 35.1-35.1h26.5v191.3h-26.5c-19.4 0-35.1-15.7-35.1-35.1zM561.5 149.6c0 23.4-15.6 43.3-36.9 49.7v44.9h-30v-44.9c-21.4-6.5-36.9-26.3-36.9-49.7 0-28.6 23.3-51.9 51.9-51.9s51.9 23.3 51.9 51.9z"></path>
+        </svg>
+        <div class="message-text">Hey there 👋 <br> How can I help you today?</div>
+      </div>
+    </div>
+
+      <!-- Chatbot Footer -->
+       <div class="chat-footer">
+        <form action="#" class="chat-form">
+          <textarea placeholder="Message..." class="message-input" required></textarea>
+          <div class="chat-controls">
+            <button type="button" id="emoji-picker" class="material-symbols-rounded">sentiment_satisfied</button>
+            <div class="file-upload-wrapper">
+              <input type="file" accept="images/*" id="file-input" hidden>
+              <img src="#">
+              <button type="button" id="file-upload" class="material-symbols-rounded">attach_file</button>
+              <button type="button" id="file-cancle" class="material-symbols-rounded">close</button>
+            </div>
+            <button type="submit" id="send-message" class="material-symbols-rounded">arrow_upward</button>
+          </div>
+
+        </form>
+       </div>
+  </div>
+</div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('youtubeModal');
+    const player = document.getElementById('youtubePlayer');
+    
+    modal.addEventListener('show.bs.modal', function(event) {
+      const button = event.relatedTarget;
+      const videoId = button.getAttribute('data-video-id');
+      player.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1&controls=1&showinfo=0`;
+    });
+
+    modal.addEventListener('hidden.bs.modal', function() {
+      player.src = '';
+    });
+  });
+
+  // Add active class to current section
+  document.addEventListener('DOMContentLoaded', function() {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (pageYOffset >= (sectionTop - sectionHeight/3)) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').slice(1) === current) {
+          link.classList.add('active');
+        }
+      });
+    });
+  });
+
+  //distance for near by places
+  document.addEventListener('DOMContentLoaded', function() {
+    // Function to calculate distance between two coordinates
+    function calculateDistance(lat1, lon1, lat2, lon2) {
+      const R = 6371; // Earth's radius in kilometers
+      const dLat = (lat2 - lat1) * Math.PI / 180;
+      const dLon = (lon2 - lon1) * Math.PI / 180;
+      const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+                Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+                Math.sin(dLon/2) * Math.sin(dLon/2);
+      const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+      return R * c; // Distance in kilometers
+    }
+
+    // Function to find and display nearby places
+    function findNearbyPlaces() {
+      const currentLat = parseFloat('<%= list.coordinates.latitude %>');
+      const currentLon = parseFloat('<%= list.coordinates.longitude %>');
+      const currentId = '<%= list._id %>';
+      const nearbyPlacesContainer = document.getElementById('nearbyPlaces');
+      
+      // Get all listings from the server
+      fetch('/listing/api/listings')
+        .then(response => response.json())
+        .then(listings => {
+          // Calculate distances and sort
+          const placesWithDistances = listings
+            .filter(listing => listing._id !== currentId) // Exclude current listing
+            .map(listing => ({
+              ...listing,
+              distance: calculateDistance(
+                currentLat,
+                currentLon,
+                listing.coordinates.latitude,
+                listing.coordinates.longitude
+              )
+            }))
+            .sort((a, b) => a.distance - b.distance)
+            .slice(0, 3); // Get top 3 nearest places
+
+          // Display nearby places
+          nearbyPlacesContainer.innerHTML = placesWithDistances.map(place => `
+            <div class="col-md-4">
+              <div class="nearby-place-card">
+                <img src="${place.image.url}" class="nearby-place-image" alt="${place.title}">
+                <div class="nearby-place-content">
+                  <h5 class="nearby-place-title">${place.title}</h5>
+                  <p class="nearby-place-location">${place.location}, ${place.country}</p>
+                  <p class="nearby-place-distance">${place.distance.toFixed(1)} km away</p>
+                  <a href="/listing/${place._id}" class="btn btn-outline-primary btn-sm">View Details</a>
+                </div>
+              </div>
+            </div>
+          `).join('');
+        })
+        .catch(error => console.error('Error fetching nearby places:', error));
+    }
+
+    // Call the function when the page loads
+    findNearbyPlaces();
+  });
+</script>
+
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<script>
+  const address = "<%= list.location %>, <%= list.country %>";
+  const map_token = "<%= apiKey %>";
+</script>
+<script src="/js/map.js"></script>
+
 </body>
+

@@ -14,6 +14,9 @@ router
     .get(wrapAsync(ListingController.index))
     .post(isLoggedIn, isAdmin, upload.single('listing[image]'), validateListing, wrapAsync(ListingController.createListing));
 
+// API endpoint to fetch all listings
+router.get("/api/listings", wrapAsync(ListingController.getAllListings));
+
 //new route
 router.get("/new", isLoggedIn, isAdmin, ListingController.renderNewForm);
 

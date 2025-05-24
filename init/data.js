@@ -10,6 +10,27 @@ const allListings = [
     price: 500,
     location: "Agra",
     country: "Uttar Pradesh, India",
+    coordinates: { latitude: 27.1751, longitude: 78.0421 },
+    videos: [
+      {
+        id: "eN6vyH_iImE",
+        title: "Taj Mahal Tour",
+        thumbnail:
+          "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148997478.jpg",
+      },
+      {
+        id: "6DDJY82ZuTU",
+        title: "Taj Mahal History",
+        thumbnail:
+          "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148914343.jpg",
+      },
+      {
+        id: "DV_r9tw8uo8",
+        title: "Taj Mahal Architecture",
+        thumbnail:
+          "https://img.freepik.com/free-vector/flat-geometric-travel-youtube-thumbnail_23-2148923758.jpg",
+      },
+    ],
   },
   {
     title: "Varanasi Ghats",
@@ -22,18 +43,27 @@ const allListings = [
     price: 200,
     location: "Varanasi",
     country: "India",
-  },
-  {
-    title: "Fatehpur Sikri",
-    description:
-      "Step back in time at the Mughal city of Fatehpur Sikri. Marvel at its palaces, courtyards, and the stunning Buland Darwaza.",
-    image: {
-      filename: "fatehpursikriimage",
-      url: "https://media.istockphoto.com/id/514675199/photo/dar-gah-mosque.jpg?s=1024x1024&w=is&k=20&c=WRUmd6UJNDgrxIzaMcLN9nsoKeOXY93c143-wn-rZPU=",
-    },
-    price: 300,
-    location: "Fatehpur Sikri",
-    country: "India",
+    coordinates: { latitude: 25.3176, longitude: 83.0058 },
+    videos: [
+      {
+        id: "7-WlErr5mnQ",
+        title: "Taj Mahal Tour",
+        thumbnail:
+          "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148997478.jpg",
+      },
+      {
+        id: "L-2MUmGTkDA",
+        title: "Taj Mahal History",
+        thumbnail:
+          "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148914343.jpg",
+      },
+      {
+        id: "_rQtI71dl6I&t=35s",
+        title: "Taj Mahal Architecture",
+        thumbnail:
+          "https://img.freepik.com/free-vector/flat-geometric-travel-youtube-thumbnail_23-2148923758.jpg",
+      },
+    ],
   },
   {
     title: "Lucknow Bara Imambara",
@@ -46,6 +76,27 @@ const allListings = [
     price: 150,
     location: "Lucknow",
     country: "India",
+    coordinates: { latitude: 26.8687, longitude: 80.9121 },
+    videos: [
+      {
+        id: "sRzNiq8eLfo&t=20s",
+        title: "Taj Mahal Tour",
+        thumbnail:
+          "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148997478.jpg",
+      },
+      {
+        id: "HnazxRFfouU&t=9s",
+        title: "Taj Mahal History",
+        thumbnail:
+          "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148914343.jpg",
+      },
+      {
+        id: "kKO5R0LWDE4",
+        title: "Taj Mahal Architecture",
+        thumbnail:
+          "https://img.freepik.com/free-vector/flat-geometric-travel-youtube-thumbnail_23-2148923758.jpg",
+      },
+    ],
   },
   {
     title: "Ayodhya Temples",
@@ -58,6 +109,27 @@ const allListings = [
     price: 100,
     location: "Ayodhya",
     country: "India",
+    coordinates: { latitude: 26.7924, longitude: 82.1998 },
+    videos: [
+      {
+        id: "Iu9Bef851wM",
+        title: "Ayodhya Temples",
+        thumbnail:
+          "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148997478.jpg",
+      },
+      {
+        id: "LGrgIB_R6kk",
+        title: "Ayodhya Temples",
+        thumbnail:
+          "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148914343.jpg",
+      },
+      {
+        id: "PNYmPkMtdT0",
+        title: "Ayodhya Temples",
+        thumbnail:
+          "https://img.freepik.com/free-vector/flat-geometric-travel-youtube-thumbnail_23-2148923758.jpg",
+      },
+    ],
   },
   {
     title: "Sarnath Stupa",
@@ -70,6 +142,27 @@ const allListings = [
     price: 250,
     location: "Sarnath",
     country: "India",
+    coordinates: { latitude: 25.3809, longitude: 83.0214 },
+    videos: [
+      {
+        id: "1mfqVupHH0E&t=10s",
+        title: "Sarnath Stupa",
+        thumbnail:
+          "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148997478.jpg",
+      },
+      {
+        id: "-iOzfPNnkB0&t=563s",
+        title: "Sarnath Stupa",
+        thumbnail:
+          "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148914343.jpg",
+      },
+      {
+        id: "SRDP5xpKW-0",
+        title: "Sarnath Stupa",
+        thumbnail:
+          "https://img.freepik.com/free-vector/flat-geometric-travel-youtube-thumbnail_23-2148923758.jpg",
+      },
+    ],
   },
   {
     title: "Kushinagar Buddhist Sites",
@@ -82,6 +175,27 @@ const allListings = [
     price: 200,
     location: "Kushinagar",
     country: "India",
+    coordinates: { latitude: 26.7403, longitude: 83.8889 },
+    videos: [
+      {
+        id: "RcmLXRt94vs",
+        title: "Kushinagar Buddhist Sites",
+        thumbnail:
+          "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148997478.jpg",
+      },
+      {
+        id: "x5aQHn6wrc0&t=15s",
+        title: "Kushinagar Buddhist Sites",
+        thumbnail:
+          "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148914343.jpg",
+      },
+      {
+        id: "GW2LhdIB2uc",
+        title: "Kushinagar Buddhist Sites",
+        thumbnail:
+          "https://img.freepik.com/free-vector/flat-geometric-travel-youtube-thumbnail_23-2148923758.jpg",
+      },
+    ],
   },
   {
     title: "Jhansi Fort",
@@ -94,6 +208,27 @@ const allListings = [
     price: 150,
     location: "Jhansi",
     country: "India",
+    coordinates: { latitude: 25.4484, longitude: 78.5685 },
+    videos: [
+      {
+        id: "ZnzQ-2KdzAQ",
+        title: "Jhansi Fort",
+        thumbnail:
+          "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148997478.jpg",
+      },
+      {
+        id: "JOfWGH74to8",
+        title: "Jhansi Fort",
+        thumbnail:
+          "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148914343.jpg",
+      },
+      {
+        id: "OO7BKM8iv9o",
+        title: "Jhansi Fort",
+        thumbnail:
+          "https://img.freepik.com/free-vector/flat-geometric-travel-youtube-thumbnail_23-2148923758.jpg",
+      },
+    ],
   },
   {
     title: "Dudhwa National Park",
@@ -106,6 +241,27 @@ const allListings = [
     price: 500,
     location: "Lakhimpur Kheri",
     country: "India",
+    coordinates: { latitude: 28.4695, longitude: 80.7022 },
+    videos: [
+      {
+        id: "ZnzQ-2KdzAQ",
+        title: "Jhansi Fort",
+        thumbnail:
+          "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148997478.jpg",
+      },
+      {
+        id: "JOfWGH74to8",
+        title: "Jhansi Fort",
+        thumbnail:
+          "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148914343.jpg",
+      },
+      {
+        id: "OO7BKM8iv9o",
+        title: "Jhansi Fort",
+        thumbnail:
+          "https://img.freepik.com/free-vector/flat-geometric-travel-youtube-thumbnail_23-2148923758.jpg",
+      },
+    ],
   },
   {
     title: "Chitrakoot",
@@ -118,6 +274,27 @@ const allListings = [
     price: 300,
     location: "Chitrakoot",
     country: "India",
+    coordinates: { latitude: 25.1968, longitude: 80.8638 },
+    videos: [
+      {
+        id: "majZh2AJ7Pg",
+        title: "Chitrakoot",
+        thumbnail:
+          "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148997478.jpg",
+      },
+      {
+        id: "86wSFi5Gf5Q",
+        title: "Chitrakoot",
+        thumbnail:
+          "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148914343.jpg",
+      },
+      {
+        id: "MaMUXzaIGGk",
+        title: "Chitrakoot",
+        thumbnail:
+          "https://img.freepik.com/free-vector/flat-geometric-travel-youtube-thumbnail_23-2148923758.jpg",
+      },
+    ],
   },
   {
     title: "Mathura and Vrindavan",
@@ -130,10 +307,31 @@ const allListings = [
     price: 250,
     location: "Mathura-Vrindavan",
     country: "India",
+    coordinates: { latitude: 27.4924, longitude: 77.6737 },
+    videos: [
+      {
+        id: "4o8pUsRWZjQ",
+        title: "Mathura and Vrindavan",
+        thumbnail:
+          "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148997478.jpg",
+      },
+      {
+        id: "vUg4XjYVPaM&t=78s",
+        title: "Mathura and Vrindavan",
+        thumbnail:
+          "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148914343.jpg",
+      },
+      {
+        id: "edVn6u-WMlo",
+        title: "Mathura and Vrindavan",
+        thumbnail:
+          "https://img.freepik.com/free-vector/flat-geometric-travel-youtube-thumbnail_23-2148923758.jpg",
+      },
+    ],
   },
   {
     title: "Sankat Mochan Temple",
-    description: 
+    description:
       "Dedicated to Lord Hanuman, Sankat Mochan is one of Varanasi's most revered temples. Founded by the saint Goswami Tulsidas, it's believed that a visit here removes all troubles (sankat). The temple is known for its vibrant Tuesday and Saturday gatherings with devotional music.",
     image: {
       filename: "sankatmochanimage",
@@ -142,10 +340,31 @@ const allListings = [
     price: 0, // Usually no entry fee
     location: "Varanasi",
     country: "India",
+    coordinates: { latitude: 25.3176, longitude: 83.0058 },
+    videos: [
+      {
+        id: "gIMcRVyyDr4",
+        title: "Sankat Mochan Temple",
+        thumbnail:
+          "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148997478.jpg",
+      },
+      {
+        id: "8x_OqyWzU7k",
+        title: "Sankat Mochan Temple",
+        thumbnail:
+          "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148914343.jpg",
+      },
+      {
+        id: "-2hWUaTnoaM",
+        title: "Sankat Mochan Temple",
+        thumbnail:
+          "https://img.freepik.com/free-vector/flat-geometric-travel-youtube-thumbnail_23-2148923758.jpg",
+      },
+    ],
   },
   {
     title: "Makhdoom Shah Dargah",
-    description: 
+    description:
       "The sacred dargah (shrine) of Makhdoom Shah Baba, a revered Sufi saint, offers a peaceful spiritual experience. This important Muslim pilgrimage site attracts devotees from various faiths who come to seek blessings and tie threads on the shrine's lattice windows, symbolizing their wishes and prayers.",
     image: {
       filename: "makhdumshahimage",
@@ -154,6 +373,27 @@ const allListings = [
     price: 0, // Usually no entry fee
     location: "Faizabad - Ayodhya",
     country: "India",
+    coordinates: { latitude: 26.7924, longitude: 82.1998 },
+    videos: [
+      {
+        id: "P7iI0uIrZfQ",
+        title: "Makhdoom Shah Dargah",
+        thumbnail:
+          "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148997478.jpg",
+      },
+      {
+        id: "epcrdoYk6wM",
+        title: "Makhdoom Shah Dargah",
+        thumbnail:
+          "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148914343.jpg",
+      },
+      {
+        id: "6vBIbgfO6LE",
+        title: "Makhdoom Shah Dargah",
+        thumbnail:
+          "https://img.freepik.com/free-vector/flat-geometric-travel-youtube-thumbnail_23-2148923758.jpg",
+      },
+    ],
   },
   {
     title: "Agra Fort",
@@ -164,17 +404,37 @@ const allListings = [
       url: "https://images.pexels.com/photos/27222606/pexels-photo-27222606/free-photo-of-the-front-of-a-large-building-with-a-large-arch.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     },
     price: 400,
-    location: "Agra",
+    location: "Agra this is the location",
     country: "India",
-  }
+    coordinates: { latitude: 27.1797, longitude: 78.0211 },
+    videos: [
+      {
+        id: "IV4RxvXYGzo",
+        title: "Agra Fort",
+        thumbnail:
+          "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148997478.jpg",
+      },
+      {
+        id: "5R3Cx3Yk21o",
+        title: "Agra Fort",
+        thumbnail:
+          "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148914343.jpg",
+      },
+      {
+        id: "2x9ywCSxWAQ",
+        title: "Agra Fort",
+        thumbnail:
+          "https://img.freepik.com/free-vector/flat-geometric-travel-youtube-thumbnail_23-2148923758.jpg",
+      },
+    ],
+  },
   // Additional places can be appended following the same format
 ];
-
 
 const secondListings = [
   {
     title: "All Saints Cathedral",
-    description: 
+    description:
       "Visit the magnificent All Saints Cathedral in Allahabad, known for its stunning Gothic architecture and beautiful stained glass windows. This Anglican cathedral is one of the finest examples of colonial-era religious buildings in India.",
     image: {
       filename: "allsaintscathedralimage",
@@ -183,10 +443,31 @@ const secondListings = [
     price: 150,
     location: "Allahabad",
     country: "India",
+    coordinates: { latitude: 25.4358, longitude: 81.8463 },
+    videos: [
+      {
+        id: "CGSjJB4XRW4",
+        title: "All Saints Cathedral",
+        thumbnail:
+          "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148997478.jpg",
+      },
+      {
+        id: "wtSRUvQFrfA",
+        title: "All Saints Cathedral",
+        thumbnail:
+          "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148914343.jpg",
+      },
+      {
+        id: "ID4ODK3Lbss",
+        title: "All Saints Cathedral",
+        thumbnail:
+          "https://img.freepik.com/free-vector/flat-geometric-travel-youtube-thumbnail_23-2148923758.jpg",
+      },
+    ],
   },
   {
     title: "Hastinapur",
-    description: 
+    description:
       "Explore the ancient city of Hastinapur, the capital of the Kuru Kingdom from the Mahabharata. Visit Jain temples, archaeological sites, and immerse yourself in the rich history of this legendary location.",
     image: {
       filename: "hastinapurimage",
@@ -195,10 +476,31 @@ const secondListings = [
     price: 250,
     location: "Meerut",
     country: "India",
+    coordinates: { latitude: 29.155, longitude: 77.9922 },
+    videos: [
+      {
+        id: "Z0yCGdo-B9M",
+        title: "Hastinapur",
+        thumbnail:
+          "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148997478.jpg",
+      },
+      {
+        id: "ccef3HviR28",
+        title: "Hastinapur",
+        thumbnail:
+          "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148914343.jpg",
+      },
+      {
+        id: "HM-zUvhoPFM",
+        title: "Hastinapur",
+        thumbnail:
+          "https://img.freepik.com/free-vector/flat-geometric-travel-youtube-thumbnail_23-2148923758.jpg",
+      },
+    ],
   },
   {
     title: "Krishna Janmabhoomi",
-    description: 
+    description:
       "Visit the sacred birthplace of Lord Krishna in Mathura. Explore the temple complex, museum, and experience the spiritual significance of this important Hindu pilgrimage site.",
     image: {
       filename: "krishnajanmabhomiimage",
@@ -207,10 +509,31 @@ const secondListings = [
     price: 350,
     location: "Mathura",
     country: "India",
+    coordinates: { latitude: 27.4924, longitude: 77.6737 },
+    videos: [
+      {
+        id: "q0rnJQUMg6A",
+        title: "Krishna Janmabhoomi",
+        thumbnail:
+          "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148997478.jpg",
+      },
+      {
+        id: "CZ5xE9P3tlo",
+        title: "Krishna Janmabhoomi",
+        thumbnail:
+          "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148914343.jpg",
+      },
+      {
+        id: "6-TnJlzxQOY",
+        title: "Krishna Janmabhoomi",
+        thumbnail:
+          "https://img.freepik.com/free-vector/flat-geometric-travel-youtube-thumbnail_23-2148923758.jpg",
+      },
+    ],
   },
   {
     title: "Kaal Bhairav Temple",
-    description: 
+    description:
       "Discover the ancient Kaal Bhairav Temple in Varanasi, dedicated to the fierce manifestation of Lord Shiva as the God of Time. Experience unique rituals and the mystical atmosphere of this significant temple.",
     image: {
       filename: "kaalbhairavimage",
@@ -219,10 +542,31 @@ const secondListings = [
     price: 180,
     location: "Varanasi",
     country: "India",
+    coordinates: { latitude: 25.3176, longitude: 83.0058 },
+    videos: [
+      {
+        id: "FLkAwdNl-vo",
+        title: "Kaal Bhairav Temple",
+        thumbnail:
+          "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148997478.jpg",
+      },
+      {
+        id: "BqJvqyt0w2Q",
+        title: "Kaal Bhairav Temple",
+        thumbnail:
+          "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148914343.jpg",
+      },
+      {
+        id: "_MNFHcOsDUE",
+        title: "Kaal Bhairav Temple",
+        thumbnail:
+          "https://img.freepik.com/free-vector/flat-geometric-travel-youtube-thumbnail_23-2148923758.jpg",
+      },
+    ],
   },
   {
     title: "Banaras Hindu University (BHU)",
-    description: 
+    description:
       "Tour the sprawling campus of Banaras Hindu University, one of Asia's largest residential universities. Visit the Bharat Kala Bhavan museum, New Vishwanath Temple, and experience the intellectual heritage of this renowned institution.",
     image: {
       filename: "bhuimage",
@@ -231,10 +575,31 @@ const secondListings = [
     price: 200,
     location: "Varanasi",
     country: "India",
+    coordinates: { latitude: 25.2677, longitude: 82.9913 },
+    videos: [
+      {
+        id: "4dqAu0cLHyE",
+        title: "Banaras Hindu University",
+        thumbnail:
+          "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148997478.jpg",
+      },
+      {
+        id: "1oeh8LwyMtY",
+        title: "Banaras Hindu University",
+        thumbnail:
+          "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148914343.jpg",
+      },
+      {
+        id: "JwDojrbH7zQ",
+        title: "Banaras Hindu University",
+        thumbnail:
+          "https://img.freepik.com/free-vector/flat-geometric-travel-youtube-thumbnail_23-2148923758.jpg",
+      },
+    ],
   },
   {
     title: "Kashi Vishwanath Temple",
-    description: 
+    description:
       "Experience the divine aura of the famous Kashi Vishwanath Temple, dedicated to Lord Shiva. One of the twelve Jyotirlingas, this ancient temple is the spiritual heart of the holy city of Varanasi.",
     image: {
       filename: "kashivishwanathimage",
@@ -243,10 +608,31 @@ const secondListings = [
     price: 300,
     location: "Varanasi",
     country: "India",
+    coordinates: { latitude: 25.3109, longitude: 83.0108 },
+    videos: [
+      {
+        id: "cRBcTeYOYpI",
+        title: "Kashi Vishwanath Temple",
+        thumbnail:
+          "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148997478.jpg",
+      },
+      {
+        id: "Bhgqg8E8PcU",
+        title: "Kashi Vishwanath Temple",
+        thumbnail:
+          "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148914343.jpg",
+      },
+      {
+        id: "yPdoC8K8Dp4",
+        title: "Kashi Vishwanath Temple",
+        thumbnail:
+          "https://img.freepik.com/free-vector/flat-geometric-travel-youtube-thumbnail_23-2148923758.jpg",
+      },
+    ],
   },
   {
     title: "Train Park",
-    description: 
+    description:
       "Enjoy a relaxing day at Train Park with its miniature train rides, beautiful gardens, and recreational facilities. Perfect for families looking for outdoor activities and a peaceful retreat.",
     image: {
       filename: "trainparkimage",
@@ -255,6 +641,27 @@ const secondListings = [
     price: 120,
     location: "Lucknow",
     country: "India",
+    coordinates: { latitude: 26.8467, longitude: 80.9462 },
+    videos: [
+      {
+        id: "H3ZG7HTJvWk",
+        title: "Train Park",
+        thumbnail:
+          "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148997478.jpg",
+      },
+      {
+        id: "bDbeLdkJi58",
+        title: "Train Park",
+        thumbnail:
+          "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148914343.jpg",
+      },
+      {
+        id: "XQh5ZctD8yY",
+        title: "Train Park",
+        thumbnail:
+          "https://img.freepik.com/free-vector/flat-geometric-travel-youtube-thumbnail_23-2148923758.jpg",
+      },
+    ],
   },
 ];
 
@@ -270,6 +677,27 @@ const additionalUPDestinations = [
     price: 280,
     location: "Prayagraj",
     country: "India",
+    coordinates: { latitude: 25.4358, longitude: 81.8463 },
+    videos: [
+      {
+        id: "9jOkgsZMxjw",
+        title: "Prayagraj",
+        thumbnail:
+          "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148997478.jpg",
+      },
+      {
+        id: "C9_2VTAZwlk",
+        title: "Prayagraj",
+        thumbnail:
+          "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148914343.jpg",
+      },
+      {
+        id: "95X_u-tNYdQ",
+        title: "Prayagraj",
+        thumbnail:
+          "https://img.freepik.com/free-vector/flat-geometric-travel-youtube-thumbnail_23-2148923758.jpg",
+      },
+    ],
   },
   {
     title: "Mirzapur Vindhyachal",
@@ -282,6 +710,27 @@ const additionalUPDestinations = [
     price: 190,
     location: "Mirzapur",
     country: "India",
+    coordinates: { latitude: 25.146, longitude: 82.5674 },
+    videos: [
+      {
+        id: "2G6gwg3w7SY",
+        title: "Mirzapur Vindhyachal",
+        thumbnail:
+          "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148997478.jpg",
+      },
+      {
+        id: "bqOTaYjhhb0",
+        title: "Mirzapur Vindhyachal",
+        thumbnail:
+          "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148914343.jpg",
+      },
+      {
+        id: "_iF4XagTPHY",
+        title: "Mirzapur Vindhyachal",
+        thumbnail:
+          "https://img.freepik.com/free-vector/flat-geometric-travel-youtube-thumbnail_23-2148923758.jpg",
+      },
+    ],
   },
   {
     title: "Raebareli Bird Sanctuary",
@@ -294,6 +743,27 @@ const additionalUPDestinations = [
     price: 220,
     location: "Raebareli",
     country: "India",
+    coordinates: { latitude: 26.2309, longitude: 81.2402 },
+    videos: [
+      {
+        id: "6Jw_npo3Mok",
+        title: "Raebareli Bird Sanctuary",
+        thumbnail:
+          "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148997478.jpg",
+      },
+      {
+        id: "PigjdJW_Op0&t=16s",
+        title: "Raebareli Bird Sanctuary",
+        thumbnail:
+          "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148914343.jpg",
+      },
+      {
+        id: "XSfL5nUCw60",
+        title: "Raebareli Bird Sanctuary",
+        thumbnail:
+          "https://img.freepik.com/free-vector/flat-geometric-travel-youtube-thumbnail_23-2148923758.jpg",
+      },
+    ],
   },
   {
     title: "Naimisharanya",
@@ -306,6 +776,27 @@ const additionalUPDestinations = [
     price: 160,
     location: "Sitapur",
     country: "India",
+    coordinates: { latitude: 27.5619, longitude: 80.6825 },
+    videos: [
+      {
+        id: "IUzqNHFOJrc",
+        title: "Naimisharanya",
+        thumbnail:
+          "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148997478.jpg",
+      },
+      {
+        id: "64MHoggI_rQ",
+        title: "Naimisharanya",
+        thumbnail:
+          "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148914343.jpg",
+      },
+      {
+        id: "we1QquFwZSw",
+        title: "Naimisharanya",
+        thumbnail:
+          "https://img.freepik.com/free-vector/flat-geometric-travel-youtube-thumbnail_23-2148923758.jpg",
+      },
+    ],
   },
   {
     title: "Chandauli's Naugarh Fort",
@@ -318,6 +809,27 @@ const additionalUPDestinations = [
     price: 170,
     location: "Chandauli",
     country: "India",
+    coordinates: { latitude: 25.2557, longitude: 83.2683 },
+    videos: [
+      {
+        id: "IbljRA9t-XM",
+        title: "Chandauli's Naugarh Fort",
+        thumbnail:
+          "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148997478.jpg",
+      },
+      {
+        id: "p-EhJT1S7Nk",
+        title: "Chandauli's Naugarh Fort",
+        thumbnail:
+          "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148914343.jpg",
+      },
+      {
+        id: "FHVsxCI7rfQ",
+        title: "Chandauli's Naugarh Fort",
+        thumbnail:
+          "https://img.freepik.com/free-vector/flat-geometric-travel-youtube-thumbnail_23-2148923758.jpg",
+      },
+    ],
   },
   {
     title: "Gorakhpur Gorakhnath Temple",
@@ -330,6 +842,27 @@ const additionalUPDestinations = [
     price: 130,
     location: "Gorakhpur",
     country: "India",
+    coordinates: { latitude: 26.7606, longitude: 83.3732 },
+    videos: [
+      {
+        id: "BTZOBRLNSGg",
+        title: "Gorakhpur Gorakhnath Temple",
+        thumbnail:
+          "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148997478.jpg",
+      },
+      {
+        id: "5N3jsBx6sqk",
+        title: "Gorakhpur Gorakhnath Temple",
+        thumbnail:
+          "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148914343.jpg",
+      },
+      {
+        id: "fLQQ_I_xciE",
+        title: "Gorakhpur Gorakhnath Temple",
+        thumbnail:
+          "https://img.freepik.com/free-vector/flat-geometric-travel-youtube-thumbnail_23-2148923758.jpg",
+      },
+    ],
   },
   {
     title: "Etawah Lion Safari",
@@ -342,6 +875,27 @@ const additionalUPDestinations = [
     price: 350,
     location: "Etawah",
     country: "India",
+    coordinates: { latitude: 26.7766, longitude: 79.0213 },
+    videos: [
+      {
+        id: "GqFu2IJic0s",
+        title: "Etawah Lion Safari",
+        thumbnail:
+          "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148997478.jpg",
+      },
+      {
+        id: "47z1gxEy3po",
+        title: "Etawah Lion Safari",
+        thumbnail:
+          "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148914343.jpg",
+      },
+      {
+        id: "P7gtQI9Wcyw",
+        title: "Etawah Lion Safari",
+        thumbnail:
+          "https://img.freepik.com/free-vector/flat-geometric-travel-youtube-thumbnail_23-2148923758.jpg",
+      },
+    ],
   },
   {
     title: "Sonbhadra Salkhan Fossil Park",
@@ -354,6 +908,27 @@ const additionalUPDestinations = [
     price: 240,
     location: "Sonbhadra",
     country: "India",
+    coordinates: { latitude: 24.6877, longitude: 83.0685 },
+    videos: [
+      {
+        id: "dGrTzIVHeDk",
+        title: "Sonbhadra Salkhan Fossil Park",
+        thumbnail:
+          "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148997478.jpg",
+      },
+      {
+        id: "V0D-rE7uDb4",
+        title: "Sonbhadra Salkhan Fossil Park",
+        thumbnail:
+          "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148914343.jpg",
+      },
+      {
+        id: "d2cPRidPDnw",
+        title: "Sonbhadra Salkhan Fossil Park",
+        thumbnail:
+          "https://img.freepik.com/free-vector/flat-geometric-travel-youtube-thumbnail_23-2148923758.jpg",
+      },
+    ],
   },
   {
     title: "Kanpur Bithoor",
@@ -366,6 +941,27 @@ const additionalUPDestinations = [
     price: 180,
     location: "Kanpur",
     country: "India",
+    coordinates: { latitude: 26.4499, longitude: 80.3319 },
+    videos: [
+      {
+        id: "5Etjujo5W-g",
+        title: "Kanpur Bithoor",
+        thumbnail:
+          "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148997478.jpg",
+      },
+      {
+        id: "VnCEHRJHLEA",
+        title: "Kanpur Bithoor",
+        thumbnail:
+          "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148914343.jpg",
+      },
+      {
+        id: "BvQuIjardIA",
+        title: "Kanpur Bithoor",
+        thumbnail:
+          "https://img.freepik.com/free-vector/flat-geometric-travel-youtube-thumbnail_23-2148923758.jpg",
+      },
+    ],
   },
   {
     title: "Kapilvastu",
@@ -373,15 +969,40 @@ const additionalUPDestinations = [
       "Visit the ancient kingdom of Lord Buddha where he spent his early life as Prince Siddhartha. Explore archaeological sites and Buddhist monuments.",
     image: {
       filename: "kapilvastuimage",
-      url: "https://scontent.fvns1-1.fna.fbcdn.net/v/t1.6435-9/120048748_3351632408254106_1059284566134213330_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_ohc=qm2BeJ6sbpIQ7kNvgHI42rO&_nc_oc=AdlNRuAwHdhK65ZkGIcjFoVgCAH4xKweuDPDnKIDdzpJhITE-vf-hDaSQrVVu1kPa3Zsr4FUa7lMDTTH8iWllrQw&_nc_zt=23&_nc_ht=scontent.fvns1-1.fna&_nc_gid=bGvplp3o4Ku8kZAfYRVaow&oh=00_AYGfeVfl_leWMemzX6DIHnvlQuFPpwjgy5ifSN4sLTMV6Q&oe=681221EC",
+      url: "https://cdn.s3waas.gov.in/s301386bd6d8e091c2ab4c7c7de644d37b/uploads/bfi_thumb/2018051741-olw736s637y4vdx0m82ze09x10nj7h8rnuov8gw96y.jpg",
     },
     price: 260,
     location: "Siddharthnagar",
     country: "India",
-  }
+    coordinates: { latitude: 27.5, longitude: 83.45 },
+    videos: [
+      {
+        id: "lvZvmRkpt-k",
+        title: "Kapilvastu",
+        thumbnail:
+          "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148997478.jpg",
+      },
+      {
+        id: "JwGkgJsLaa8",
+        title: "Kapilvastu",
+        thumbnail:
+          "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148914343.jpg",
+      },
+      {
+        id: "O-Z7wNCr0Sk",
+        title: "Kapilvastu",
+        thumbnail:
+          "https://img.freepik.com/free-vector/flat-geometric-travel-youtube-thumbnail_23-2148923758.jpg",
+      },
+    ],
+  },
 ];
 
 // To use these, you would add them to your sampleListings array like this:
-const sampleListing = [...allListings,...secondListings, ...additionalUPDestinations];
+const sampleListing = [
+  ...allListings,
+  ...secondListings,
+  ...additionalUPDestinations,
+];
 
 module.exports = { data: sampleListing };

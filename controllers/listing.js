@@ -62,3 +62,13 @@ module.exports.destroyListing = async (req,res) =>{
     req.flash("success","List item deleted!");
     res.redirect("/listing");
 };
+
+// API endpoint to fetch all listings
+module.exports.getAllListings = async (req, res) => {
+    try {
+        const listings = await Listing.find({});
+        res.json(listings);
+    } catch (error) {
+        res.status(500).json({ error: 'Failed to fetch listings' });
+    }
+};
