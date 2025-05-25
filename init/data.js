@@ -58,7 +58,7 @@ const allListings = [
           "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148914343.jpg",
       },
       {
-        id: "_rQtI71dl6I&t=35s",
+        id: "rDsOi3MByCI",
         title: "Varanasi Ghats",
         thumbnail:
           "https://img.freepik.com/free-vector/flat-geometric-travel-youtube-thumbnail_23-2148923758.jpg",
@@ -79,13 +79,13 @@ const allListings = [
     coordinates: { latitude: 26.8687, longitude: 80.9121 },
     videos: [
       {
-        id: "sRzNiq8eLfo&t",
+        id: "vMVnJfUpy5Y",
         title: "Lucknow Bara Imambara",
         thumbnail:
           "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148997478.jpg",
       },
       {
-        id: "HnazxRFfouU&t",
+        id: "Nxdep1NRmoc",
         title: "Lucknow Bara Imambara",
         thumbnail:
           "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148914343.jpg",

@@ -22,16 +22,26 @@ module.exports.showListing = async (req,res) => {
 };
 
 module.exports.createListing = async (req,res,next) => {
-    let url = req.file.path;
-    let filename = req.file.filename;
+    try {
+        let url = req.file.path;
+        let filename = req.file.filename;
 
-    const newItem = new Listing(req.body.listing);
-    newItem.owner = req.user._id;
+        const newItem = new Listing(req.body.listing);
+        newItem.owner = req.user._id;
+        newItem.image = {url, filename};
 
-    newItem.image = {url, filename};
-    await newItem.save();
-    req.flash("success","New Listing Created!");
-    res.redirect("/listing");  
+        // Ensure coordinates are numbers
+        if (newItem.coordinates) {
+            newItem.coordinates.latitude = Number(newItem.coordinates.latitude);
+            newItem.coordinates.longitude = Number(newItem.coordinates.longitude);
+        }
+
+        await newItem.save();
+        req.flash("success","New Listing Created!");
+        res.redirect("/listing");
+    } catch (err) {
+        next(err);
+    }
 };
 
 module.exports.renderEditForm = async (req,res) =>{
@@ -41,18 +51,31 @@ module.exports.renderEditForm = async (req,res) =>{
 };
 
 module.exports.updateListing = async (req,res) => {
-    let {id} = req.params;
-    let listing = await Listing.findByIdAndUpdate(id, {...req.body.listing});
+    try {
+        let {id} = req.params;
+        let listing = await Listing.findById(id);
+        
+        // Update basic fields
+        Object.assign(listing, req.body.listing);
 
-    if(typeof req.file !== "undefined"){
-    let url = req.file.path;
-    let filename = req.file.filename;
-    listing.image = {url, filename};
-    await listing.save();
+        // Ensure coordinates are numbers
+        if (listing.coordinates) {
+            listing.coordinates.latitude = Number(listing.coordinates.latitude);
+            listing.coordinates.longitude = Number(listing.coordinates.longitude);
+        }
+
+        if(typeof req.file !== "undefined"){
+            let url = req.file.path;
+            let filename = req.file.filename;
+            listing.image = {url, filename};
+        }
+
+        await listing.save();
+        req.flash("success","Listing updated!");
+        res.redirect(`/listing/${id}`);
+    } catch (err) {
+        next(err);
     }
-
-    req.flash("success","Listing updated!");
-    res.redirect(`/listing/${id}`);
 };
 
 module.exports.destroyListing = async (req,res) =>{

@@ -15,11 +15,18 @@ const addingSchema = new Schema({
     price: Number,
     location: String,
     country: String,
-    coordinates: { latitude: Number, longitude: Number, },
+    coordinates: {
+        latitude: {
+            type: Number,
+            required: true
+        },
+        longitude: {
+            type: Number,
+            required: true
+        }
+    },
     videos: [{
-        id: String,
-        title: String,
-        thumbnail: String
+        id: String
     }],
     reviews: [
         {
@@ -43,30 +50,31 @@ addingSchema.post("findOneAndDelete", async (listing) => {
     }
 });
 
-//adding coordinates to DB
+// Geocoding middleware - only runs if coordinates are not provided
 addingSchema.pre("save", async function (next) {
-    if (this.isModified("location") || this.isModified("country")) {
-      const map_token = process.env.MAP_TOKEN;
-      const address = `${this.location}, ${this.country}`;
-      const apiUrl = `https://api.opencagedata.com/geocode/v1/json?q=${encodeURIComponent(address)}&key=${map_token}`;
-  
-      try {
-        const response = await fetch(apiUrl);
-        const data = await response.json();
-        if (data.results.length > 0) {
-          const { lat, lng } = data.results[0].geometry;
-          this.geometry = { lat, lng }; // Set geometry field
-        } else {
-          throw new Error("Location not found.");
+    if ((this.isModified("location") || this.isModified("country")) && 
+        (!this.coordinates || !this.coordinates.latitude || !this.coordinates.longitude)) {
+        const map_token = process.env.MAP_TOKEN;
+        const address = `${this.location}, ${this.country}`;
+        const apiUrl = `https://api.opencagedata.com/geocode/v1/json?q=${encodeURIComponent(address)}&key=${map_token}`;
+    
+        try {
+            const response = await fetch(apiUrl);
+            const data = await response.json();
+            if (data.results.length > 0) {
+                const { lat, lng } = data.results[0].geometry;
+                this.coordinates = { latitude: lat, longitude: lng };
+            } else {
+                throw new Error("Location not found.");
+            }
+        } catch (error) {
+            console.error("Geocoding Error:", error);
+            next(error);
         }
-      } catch (error) {
-        console.error("Geocoding Error:", error);
-        next(error);
-      }
     }
     next();
-  });
-  
+});
+
 //Item will be added when we refresh on URL after completing code
 const listings = mongoose.model("listings",addingSchema);
 module.exports = listings;

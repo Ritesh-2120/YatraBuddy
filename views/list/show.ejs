@@ -119,7 +119,9 @@
                 <% list.videos.forEach(function(video) { %>
                   <div class="col-md-4">
                     <div class="video-thumbnail" data-bs-toggle="modal" data-bs-target="#youtubeModal" data-video-id="<%= video.id %>">
-                      <img src="<%= video.thumbnail %>" class="img-fluid rounded" alt="<%= video.title %>">
+                      <img src="https://img.youtube.com/vi/<%= video.id %>/hqdefault.jpg" 
+                           onerror="this.onerror=null; this.src='https://img.youtube.com/vi/<%= video.id %>/mqdefault.jpg';"
+                           class="img-fluid rounded" alt="Video thumbnail">
                       <div class="play-overlay">
                         <i class="bi bi-play-circle-fill"></i>
                       </div>
@@ -234,18 +236,14 @@
 
   <!-- YouTube Modal -->
   <div class="modal fade" id="youtubeModal" tabindex="-1" aria-labelledby="youtubeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-xl">
-      <div class="modal-content">
-        <div class="modal-header bg-dark text-white">
-          <h5 class="modal-title" id="youtubeModalLabel">Video Preview</h5>
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content bg-dark">
+        <div class="modal-header border-0">
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body p-0">
-          <div class="video-container" style="position: relative; padding-bottom: 47.81%; height: 0; overflow: hidden;">
-            <iframe id="youtubePlayer" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
-              frameborder="0" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-              allowfullscreen></iframe>
+          <div class="ratio ratio-16x9" style="max-height: 80vh;">
+            <iframe id="youtubePlayer" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
         </div>
       </div>
@@ -303,18 +301,18 @@
 </div>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const modal = document.getElementById('youtubeModal');
-    const player = document.getElementById('youtubePlayer');
-    
-    modal.addEventListener('show.bs.modal', function(event) {
-      const button = event.relatedTarget;
-      const videoId = button.getAttribute('data-video-id');
-      player.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1&controls=1&showinfo=0`;
-    });
+  // YouTube Modal functionality
+  const youtubeModal = document.getElementById('youtubeModal');
+  const youtubePlayer = document.getElementById('youtubePlayer');
+  
+  youtubeModal.addEventListener('hidden.bs.modal', function () {
+    youtubePlayer.src = '';
+  });
 
-    modal.addEventListener('hidden.bs.modal', function() {
-      player.src = '';
+  document.querySelectorAll('.video-thumbnail').forEach(thumbnail => {
+    thumbnail.addEventListener('click', function() {
+      const videoId = this.getAttribute('data-video-id');
+      youtubePlayer.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
     });
   });
 
