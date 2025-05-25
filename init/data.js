@@ -145,13 +145,13 @@ const allListings = [
     coordinates: { latitude: 25.3809, longitude: 83.0214 },
     videos: [
       {
-        id: "1mfqVupHH0E&t=10s",
+        id: "1mfqVupHH0E",
         title: "Sarnath Stupa",
         thumbnail:
           "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148997478.jpg",
       },
       {
-        id: "-iOzfPNnkB0&t=563s",
+        id: "PMU1VHV_Tak",
         title: "Sarnath Stupa",
         thumbnail:
           "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148914343.jpg",
@@ -184,7 +184,7 @@ const allListings = [
           "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148997478.jpg",
       },
       {
-        id: "x5aQHn6wrc0&t=15s",
+        id: "x5aQHn6wrc0",
         title: "Kushinagar Buddhist Sites",
         thumbnail:
           "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148914343.jpg",
@@ -244,20 +244,20 @@ const allListings = [
     coordinates: { latitude: 28.4695, longitude: 80.7022 },
     videos: [
       {
-        id: "ZnzQ-2KdzAQ",
-        title: "Jhansi Fort",
+        id: "hhRVhafaqrg",
+        title: "Dudhwa National Park",
         thumbnail:
           "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148997478.jpg",
       },
       {
-        id: "JOfWGH74to8",
-        title: "Jhansi Fort",
+        id: "RLrsZ4wy2mQ",
+        title: "Dudhwa National Park",
         thumbnail:
           "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148914343.jpg",
       },
       {
-        id: "OO7BKM8iv9o",
-        title: "Jhansi Fort",
+        id: "y6BcL3vYiWw",
+        title: "Dudhwa National Park",
         thumbnail:
           "https://img.freepik.com/free-vector/flat-geometric-travel-youtube-thumbnail_23-2148923758.jpg",
       },
@@ -316,7 +316,7 @@ const allListings = [
           "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148997478.jpg",
       },
       {
-        id: "vUg4XjYVPaM&t=78s",
+        id: "vUg4XjYVPaM",
         title: "Mathura and Vrindavan",
         thumbnail:
           "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148914343.jpg",
@@ -401,7 +401,7 @@ const allListings = [
       "Visit the majestic Agra Fort, a UNESCO World Heritage Site, known for its red sandstone architecture and rich history.",
     image: {
       filename: "agrafortimage",
-      url: "https://images.pexels.com/photos/27222606/pexels-photo-27222606/free-photo-of-the-front-of-a-large-building-with-a-large-arch.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      url: "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrV9cQYGsqZLd0s2Cq51-Y8kMAwDKojsbtMdgJf0tSwFiu3AKvGGsgEBl3Vmrk6Xs70iwzca1hRIZLroZ6KQp6mu4sYz4Measxtv_pEaGROGDyuVEGqqri2rmkuSQyxk60Vd5xv=s680-w680-h510-rw",
     },
     price: 400,
     location: "Agra this is the location",
@@ -537,7 +537,7 @@ const secondListings = [
       "Discover the ancient Kaal Bhairav Temple in Varanasi, dedicated to the fierce manifestation of Lord Shiva as the God of Time. Experience unique rituals and the mystical atmosphere of this significant temple.",
     image: {
       filename: "kaalbhairavimage",
-      url: "https://i.pinimg.com/564x/81/89/fb/8189fb1abc140016becdb0bc91876ae8.jpg",
+      url: "https://i.pinimg.com/736x/d7/8e/5c/d78e5c57f5904e1e4cd0f25587fafbaf.jpg",
     },
     price: 180,
     location: "Varanasi",
@@ -603,7 +603,7 @@ const secondListings = [
       "Experience the divine aura of the famous Kashi Vishwanath Temple, dedicated to Lord Shiva. One of the twelve Jyotirlingas, this ancient temple is the spiritual heart of the holy city of Varanasi.",
     image: {
       filename: "kashivishwanathimage",
-      url: "https://i.pinimg.com/736x/9d/cd/8b/9dcd8b10e7912bd6b0fe4205285b44c1.jpg",
+      url: "https://www.bizarexpedition.com/blog/storage/app/public/images/ILStVN8nGwteXQ8vH4aBnyHvBIAvs4mKbZkmbxKn.png",
     },
     price: 300,
     location: "Varanasi",
@@ -752,7 +752,7 @@ const additionalUPDestinations = [
           "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148997478.jpg",
       },
       {
-        id: "PigjdJW_Op0&t=16s",
+        id: "PigjdJW_Op0",
         title: "Raebareli Bird Sanctuary",
         thumbnail:
           "https://img.freepik.com/free-vector/hand-drawn-travel-youtube-thumbnail_23-2148914343.jpg",
