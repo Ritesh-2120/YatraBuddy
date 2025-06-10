@@ -401,7 +401,7 @@ const allListings = [
       "Visit the majestic Agra Fort, a UNESCO World Heritage Site, known for its red sandstone architecture and rich history.",
     image: {
       filename: "agrafortimage",
-      url: "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrV9cQYGsqZLd0s2Cq51-Y8kMAwDKojsbtMdgJf0tSwFiu3AKvGGsgEBl3Vmrk6Xs70iwzca1hRIZLroZ6KQp6mu4sYz4Measxtv_pEaGROGDyuVEGqqri2rmkuSQyxk60Vd5xv=s680-w680-h510-rw",
+      url: "https://upload.wikimedia.org/wikipedia/commons/7/7e/Agra_03-2016_10_Agra_Fort.jpg",
     },
     price: 400,
     location: "Agra this is the location",
@@ -636,7 +636,7 @@ const secondListings = [
       "Enjoy a relaxing day at Train Park with its miniature train rides, beautiful gardens, and recreational facilities. Perfect for families looking for outdoor activities and a peaceful retreat.",
     image: {
       filename: "trainparkimage",
-      url: "https://www.lucknowzoo.com/assets/train1.jpg",
+      url: "https://lh3.googleusercontent.com/gps-cs-s/AC9h4no_HTWDKi4p30IMaWPVNmqd8TkWacX3uaX_VXurxuzSeW90Wj-O709xCSJ09zb-YzSH7qOS5-4NBM--10ILs8HKhKQY3DVp8USViSzpQYAN0xWt7X6iN9Csk48VTO8YWnK5a8gS=s680-w680-h510-rw",
     },
     price: 120,
     location: "Lucknow",
