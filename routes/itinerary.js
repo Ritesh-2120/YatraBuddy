@@ -3,7 +3,7 @@ const router = express.Router();
 
 const { GoogleGenerativeAI } = require('@google/generative-ai'); // Import the GoogleGenerativeAI package
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY); // Initialize GoogleGenerativeAI with your API key
-const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" }); // Define the generative model
+const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" }); // Define the generative model
 
 
 // Route to display the itinerary form
